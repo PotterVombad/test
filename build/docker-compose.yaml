@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+# база
+  mongo:
+    container_name: mongo-test-task
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 1234
+    networks:
+      - test-task
+# сервис
+  test-task:
+    container_name: test-task
+    build:
+      context: ..
+      dockerfile: build/Dockerfile
+    environment:
+      MONGO_USERNAME: root
+      MONGO_PASSWORD: 1234
+      MONGO_ADDR: mongo-test-task:27017
+      MONGO_DB_NAME: admin
+      MONGO_COL: users
+      JWT_SECRET_KEY: 1234
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongo
+    networks:
+      - test-task
+
+networks:
+  test-task:
