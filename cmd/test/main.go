@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 	"os"
-	"test/internal/api"
-	"test/internal/db/mongo"
-	"test/internal/tokens"
+	"github.com/PotterVombad/test/internal/api"
+	"github.com/PotterVombad/test/internal/db/mongo"
+	"github.com/PotterVombad/test/internal/tokens"
 
 	log "github.com/sirupsen/logrus"
 )

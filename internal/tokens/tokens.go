@@ -2,7 +2,7 @@ package tokens
 
 import (
 	"strings"
-	"test/internal/models"
+	"github.com/PotterVombad/test/internal/models"
 	"time"
 
 	"github.com/dgrijalva/jwt-go"

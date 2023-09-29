@@ -4,8 +4,8 @@ import (
 	"encoding/base64"
 	"fmt"
 	"net/http"
-	"test/internal/db"
-	"test/internal/tokens"
+	"github.com/PotterVombad/test/internal/db"
+	"github.com/PotterVombad/test/internal/tokens"
 
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
